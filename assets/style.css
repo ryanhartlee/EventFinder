@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(172, 172, 172);
+}
+
+#head {
+    background-image: url('logobackground.jpg');
+    width: auto;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+.form-inline {
+    display: block;
+}
+#searchlarge {
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.searchlargebtn {
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 10%;
+    font-size: 72px;
+    font-family: 'Bungee Shade', cursive;
+}
+
+.navbar {
+    color: white;
+}
