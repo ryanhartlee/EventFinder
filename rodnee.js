@@ -3,18 +3,18 @@
 $(document).ready(function () {
 
 
-$("#add-city").on("click", function(event) {
+$("#add-event").on("click", function(event) {
     
     event.preventDefault();
 
    
- city = $("#city-input").val().trim();
+ event = $("#event-input").val().trim();
 
 
  
  
-var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?city=" +
- city + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
+var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
+ event + "&size=1&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
 
     // Here we run our AJAX call to the Ticket Master API
     $.ajax({
@@ -30,8 +30,12 @@ var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?city=" +
         // Log the resulting object
         console.log(response);
 
+        $("#show").html("<h1>Events" + response.name + "</h1>");
+      $("#show").html("<p>" + response.event + "</p>");
+
         
       });
       });
 
+     
     });
