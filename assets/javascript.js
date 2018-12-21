@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#result-body').hide();
     
-    
+    //Click event
     $("#search").on("click", function (event) {
         event.preventDefault();
 
