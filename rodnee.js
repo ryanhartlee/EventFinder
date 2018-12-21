@@ -8,13 +8,13 @@ $("#add-event").on("click", function(event) {
     event.preventDefault();
 
    
- event = $("#event-input").val().trim();
+ searchEvent = $("#event-input").val().trim();
 
-
+ $("#show").empty();
  
  
 var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
- event + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
+ searchEvent + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
 
     // Here we run our AJAX call to the Ticket Master API
     $.ajax({
