@@ -35,3 +35,9 @@ h1 {
 #result-body {
     background-color: aliceblue;
 }
+
+#map {
+    height: 500px;
+    width: 500px;
+  }
+  
