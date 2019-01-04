@@ -43,10 +43,10 @@ $(document).ready(function () {
 $("#search").on("click", function (event) {
     empty();
     event.preventDefault();
-    $('#result-body').show();
+    
     searchEvent = $(".event-input").val().trim();
     $("#event").empty();
-    $("#result-body").show();
+   
 
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
         searchEvent + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
@@ -65,6 +65,8 @@ $("#search").on("click", function (event) {
                 var eventCity = response._embedded.events[i]._embedded.venues[0].city.name
                 var longitude = response._embedded.events[i]._embedded.venues[0].location.longitude;
                 var latitude = response._embedded.events[i]._embedded.venues[0].location.latitude;
+                var link = response._embedded.events[i].url;
+                console.log(link);
                 console.log(longitude);
                 console.log(latitude);
                 locations.push({
@@ -72,13 +74,14 @@ $("#search").on("click", function (event) {
                     lng: +longitude
                 });
                 console.log(locations);
-                $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
-                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5>" + "</div><br>");
-                    var btn = document.createElement("BUTTON");        // Create a <button> element
+                var btn = document.createElement("BUTTON");        // Create a <button> element
                     var t = document.createTextNode("Choose Event");       // Create a text node
                     btn.appendChild(t);
-                    $(btn).addClass("showEvent");                               // Append the text to <button>
-                    $("#event").append(btn);
+                    $(btn).addClass("showEvent"); 
+                $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
+                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5> <button class='btn btn-primary glow-input-button'> <a href=" + link + ">Purchase tickets</a></button></div><br>");
+                                                  // Append the text to <button>
+                    //$("#result").prepend(btn);//
                    
                   // $('#result').append("<input type='submit' value='Choose Event'>");
                    //var button = document.createElement("button")

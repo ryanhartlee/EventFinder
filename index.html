@@ -25,7 +25,7 @@
         <h4>Welcome to EventFinder</h4>
         <h5>Going out but need something to do?</h5>
         <h6>We've got your back</h6>
-        <button class="btn btn-primary glow-input-button">Get Started</button>
+        <button class="btn btn-primary glow-input-button"><a href="#search">Get Started</a></button>
     </div>
 </div>
 <br>
@@ -68,14 +68,22 @@
         <p>There's nothing like a night out with the family</p>
     </div>
 </div>
+    
+
 
 <section class="webdesigntuts-workshop">
     <form action="" method="">
-        <input type="search" placeholder="What are you looking for?">
-        <button>Search</button>
+        <input class="event-input" type="search" placeholder="What are you looking for?">
+        <button id="search">Search</button>
     </form>
 </section>
+    <br>
+    <br>
+    <div id="map" class="clearfix"></div>
 
+    <div>
+        <div id="event"> </div>
+    </div>
 <script src="assets/javascript.js"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
