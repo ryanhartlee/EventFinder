@@ -73,18 +73,19 @@ $("#search").on("click", function (event) {
                 });
                 console.log(locations);
                 $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
-                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5></div><br>");
+                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5>" + "</div><br>");
                     var btn = document.createElement("BUTTON");        // Create a <button> element
                     var t = document.createTextNode("Choose Event");       // Create a text node
-                    btn.appendChild(t);                                // Append the text to <button>
+                    btn.appendChild(t);
+                    $(btn).addClass("showEvent");                               // Append the text to <button>
                     $("#event").append(btn);
-
-                    //$(btn).on("click", function (event) {
-
-                    }
-
-            }
-
+                   
+                  // $('#result').append("<input type='submit' value='Choose Event'>");
+                   //var button = document.createElement("button")
+                  // var b = document.createTextNode("Choose Event");
+                 //  button.appendChild(b);
+                 //  $('#result').appendChild(button);
+                }
             initMap();
             // Log the queryURL
             console.log(queryURL);
