@@ -39,6 +39,24 @@ $(document).ready(function () {
 });
 // var locations = [{lat: 10, lng: 10}];
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyCkHE8KmFWD4RpCqEqYmy7UpoygU8MWzFE",
+    authDomain: "project1-8ca19.firebaseapp.com",
+    databaseURL: "https://project1-8ca19.firebaseio.com",
+    projectId: "project1-8ca19",
+    storageBucket: "project1-8ca19.appspot.com",
+    messagingSenderId: "572197543603"
+  };
+
+  firebase.initializeApp(config);
+
+  // Create a variable to reference the database.
+  var database = firebase.database();
+
+  // Initial Value
+  var searchEvent = "";
+
 //Click event
 $("#search").on("click", function (event) {
     empty();
@@ -46,8 +64,28 @@ $("#search").on("click", function (event) {
     
     searchEvent = $(".event-input").val().trim();
     $("#event").empty();
-   
 
+    // Code for handling the push
+    database.ref().push({
+        searchEvent: searchEvent
+    });
+
+    // Firebase watcher .on("child_added")
+    database.ref().on("child_added", function(snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+
+        // Console.loging the last event search
+      console.log(sv.eventSearch);
+
+        // Change the HTML to reflect
+        $("#result").text(sv.searchEvent);
+
+    // Handle the errors
+    }, function(errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+    });
+   
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
         searchEvent + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
     $ <
