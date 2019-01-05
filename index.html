@@ -2,82 +2,93 @@
 <html>
 
 <head>
-   <title>EventFinder Intro</title>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-      crossorigin="anonymous">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-   <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" href="assets/css/intro.css">
+    <title>EventFinder Intro</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/intro.css">
 </head>
+
 <div class="container" style="background-image: url(assets/images/eventfinder.jpg)">
-   <div class="item">
-      <h4>Welcome to EventFinder</h4>
-      <h5>Going out but need something to do?</h5>
-      <h6>We've got your back</h6>
-      <button class="btn btn-primary glow-input-button">Get Started</button>
-   </div>
+    <div class="item">
+        <h4>Welcome to EventFinder</h4>
+        <h5>Going out but need something to do?</h5>
+        <h6>We've got your back</h6>
+        <a href="#search"><button class="btn btn-primary glow-input-button">Get Started</button></a>
+    </div>
 </div>
 <br>
 <br>
 
 
 <div class="flip">
-   <div class="front" style="background-image: url('assets/images/concert.jpg')">
-      <h1 class="text-shadow">CONCERTS</h1>
-   </div>
-   <div class="back">
-      <h2>Dance</h2>
-      <p>There's nothing like a night of grooving to the beat</p>
-   </div>
+    <div class="front" style="background-image: url('assets/images/concert.jpg')">
+        <h1 class="text-shadow">CONCERTS</h1>
+    </div>
+    <div class="back">
+        <h2>Dance</h2>
+        <p>There's nothing like a night of grooving to the beat</p>
+    </div>
 </div>
 <div class="flip">
-   <div class="front" style="background-image: url('assets/images/sports.jpg')">
-      <h1 class="text-shadow">SPORTS</h1>
-   </div>
-   <div class="back">
-      <h2>Compete</h2>
-      <p>My team is better than yours.</p>
-   </div>
+    <div class="front" style="background-image: url('assets/images/sports.jpg')">
+        <h1 class="text-shadow">SPORTS</h1>
+    </div>
+    <div class="back">
+        <h2>Compete</h2>
+        <p>My team is better than yours.</p>
+    </div>
 </div>
 <div class="flip">
-   <div class="front" style="background-image: url('assets/images/art.jpg')">
-      <h1 class="text-shadow">ARTS&amp;THEATRE</h1>
-   </div>
-   <div class="back">
-      <h2>Enjoy</h2>
-      <p>Live entertainment is the best entertainment</p>
-   </div>
+    <div class="front" style="background-image: url('assets/images/art.jpg')">
+        <h1 class="text-shadow">ARTS&amp;THEATRE</h1>
+    </div>
+    <div class="back">
+        <h2>Enjoy</h2>
+        <p>Live entertainment is the best entertainment</p>
+    </div>
 </div>
 <div class="flip">
-   <div class="front" style="background-image: url('assets/images/family.jpg')">
-      <h1 class="text-shadow">FAMILY</h1>
-   </div>
-   <div class="back">
-      <h2>Joy</h2>
-      <p>There's nothing like a night out with the family</p>
-   </div>
+    <div class="front" style="background-image: url('assets/images/family.jpg')">
+        <h1 class="text-shadow">FAMILY</h1>
+    </div>
+    <div class="back">
+        <h2>Joy</h2>
+        <p>There's nothing like a night out with the family</p>
+    </div>
 </div>
+    
+
 
 <section class="webdesigntuts-workshop">
-   <form action="" method="">
-      <input type="search" placeholder="What are you looking for?">
-      <button>Search</button>
-   </form>
+    <form action="" method="">
+        <input class="event-input" type="search" placeholder="What are you looking for?">
+        <a href="#event"><button id="search">Search</button></a>
+    </form>
 </section>
+    <br>
+    <br>
+    <div id="map" class="clearfix"></div>
 
-
+    <div>
+        <div id="event"> </div>
+    </div>
 <script src="assets/javascript.js"></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc_WSE-kafDmuTbeatZJipIlDHi8DqCwM&callback=initMap"></script>
+
+
 
 </html>
