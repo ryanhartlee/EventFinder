@@ -66,6 +66,7 @@ $("#search").on("click", function (event) {
                 var longitude = response._embedded.events[i]._embedded.venues[0].location.longitude;
                 var latitude = response._embedded.events[i]._embedded.venues[0].location.latitude;
                 var link = response._embedded.events[i].url;
+                var eventImage = response._embedded.events[i].images[i].url;
                 console.log(link);
                 console.log(longitude);
                 console.log(latitude);
@@ -79,7 +80,7 @@ $("#search").on("click", function (event) {
                     btn.appendChild(t);
                     $(btn).addClass("showEvent"); 
                 $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
-                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5> <button class='btn btn-primary glow-input-button'> <a href=" + link + ">Purchase tickets</a></button></div><br>");
+                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5><img id='resultImage' src=' " + eventImage + "'><button class='btn btn-primary glow-input-button'> <a href=" + link + ">Purchase tickets</a></button></div><br>");
                                                   // Append the text to <button>
                     //$("#result").prepend(btn);//
                    
