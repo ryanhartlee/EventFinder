@@ -79,7 +79,7 @@ h1 {
   display: inline-block;
   margin-right: 2px;
   margin-bottom: 1em;
-  width: 400px;
+  width: 100%;
 }
 .flip > .front,
 .flip > .back {
@@ -125,10 +125,15 @@ body {
 
 h1 {
   text-align: center;
-  font-family: "Oswald", sans;
-  font-size: 1.5rem;
+  font-family: "Arial", sans;
+  font-size: 4rem;
   font-weight: normal;
   line-height: 3.5rem;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 h3 {
