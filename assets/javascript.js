@@ -104,13 +104,14 @@ $("#search").on("click", function (event) {
                 btn.appendChild(t);
                 $(btn).addClass("showEvent");
                 $("#event").append("<div class='flip'><div class='front pic' style='background-image: url(" + eventImage + ")''><h1 class='text-shadow'>" + eventName + "</h1></div><div class='back'><h2>" + eventCity + "</h2><p>" + eventDate + "</p><p>" + eventVenue + "<br><a href='" + link + "' target='_blank'><button class='btn btn-primary glov-input-button'>Purchase</button></a></div></div>");
-            }
-            initMap();
-            // Log the queryURL
-            console.log(queryURL);
-
-            // Log the resulting object
-            console.log(response);
+                
+                initMap();
+                // Log the queryURL
+                console.log(queryURL);
+                
+                // Log the resulting object
+                console.log(response);
+            };
 
         });
 
