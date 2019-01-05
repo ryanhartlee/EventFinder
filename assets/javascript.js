@@ -90,6 +90,7 @@ $("#search").on("click", function (event) {
                 var longitude = response._embedded.events[i]._embedded.venues[0].location.longitude;
                 var latitude = response._embedded.events[i]._embedded.venues[0].location.latitude;
                 var link = response._embedded.events[i].url;
+                var eventImage = response._embedded.events[i].images[i].url;
                 console.log(link);
                 console.log(longitude);
                 console.log(latitude);
@@ -102,8 +103,7 @@ $("#search").on("click", function (event) {
                 var t = document.createTextNode("Choose Event"); // Create a text node
                 btn.appendChild(t);
                 $(btn).addClass("showEvent");
-                $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
-                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5> <a href=" + link + " target='_blank'><button class='btn btn-primary glow-input-button'> Purchase tickets</button></a></div><br>");
+                $("#event").append("<div class='flip'><div class='front pic' style='background-image: url(" + eventImage + ")''><h1 class='text-shadow'>" + eventName + "</h1></div><div class='back'><h2>" + eventCity + "</h2><p>" + eventDate + "</p><p>" + eventVenue + "<br><a href='" + link + "' target='_blank'><button class='btn btn-primary glov-input-button'>Purchase</button></a></div></div>");
             }
             initMap();
             // Log the queryURL
