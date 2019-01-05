@@ -1,10 +1,10 @@
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 1,
+        zoom: 2,
         center: {
-            lat: -28.024,
-            lng: 140.887
+            lat: 30,
+            lng: 0
         }
     });
 
@@ -37,9 +37,7 @@ function empty() {
 $(document).ready(function () {
     $('#result-body').hide();
 });
-// var locations = [{lat: 10, lng: 10}];
 
-// Initialize Firebase
 var config = {
     apiKey: "AIzaSyCkHE8KmFWD4RpCqEqYmy7UpoygU8MWzFE",
     authDomain: "project1-8ca19.firebaseapp.com",
@@ -47,45 +45,33 @@ var config = {
     projectId: "project1-8ca19",
     storageBucket: "project1-8ca19.appspot.com",
     messagingSenderId: "572197543603"
-  };
+};
+firebase.initializeApp(config);
 
-  firebase.initializeApp(config);
+var database = firebase.database();
 
-  // Create a variable to reference the database.
-  var database = firebase.database();
-
-  // Initial Value
-  var searchEvent = "";
+var searchEvent = "";
 
 //Click event
 $("#search").on("click", function (event) {
     empty();
     event.preventDefault();
-    
+
     searchEvent = $(".event-input").val().trim();
     $("#event").empty();
 
-    // Code for handling the push
     database.ref().push({
         searchEvent: searchEvent
     });
 
-    // Firebase watcher .on("child_added")
-    database.ref().on("child_added", function(snapshot) {
-        // storing the snapshot.val() in a variable for convenience
+    database.ref().on("child_added", function (snapshot) {
         var sv = snapshot.val();
-
-        // Console.loging the last event search
-      console.log(sv.eventSearch);
-
-        // Change the HTML to reflect
-        $("#result").text(sv.searchEvent);
-
-    // Handle the errors
-    }, function(errorObject) {
-        console.log("Errors handled: " + errorObject.code);
+        console.log(sv.eventSearch);
+        $('#result').text(sv.searchEvent);
     });
-   
+
+
+
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" +
         searchEvent + "&apikey=exjiYSnDEt1bNf9JQHhvljoCD4tUdae2";
     $ <
@@ -104,6 +90,7 @@ $("#search").on("click", function (event) {
                 var longitude = response._embedded.events[i]._embedded.venues[0].location.longitude;
                 var latitude = response._embedded.events[i]._embedded.venues[0].location.latitude;
                 var link = response._embedded.events[i].url;
+                var eventImage = response._embedded.events[i].images[i].url;
                 console.log(link);
                 console.log(longitude);
                 console.log(latitude);
@@ -112,21 +99,12 @@ $("#search").on("click", function (event) {
                     lng: +longitude
                 });
                 console.log(locations);
-                var btn = document.createElement("BUTTON");        // Create a <button> element
-                    var t = document.createTextNode("Choose Event");       // Create a text node
-                    btn.appendChild(t);
-                    $(btn).addClass("showEvent"); 
-                $("#event").append("<div id='result'><h3>Events: " + eventName + " on " + eventDate + "</h3>" +
-                    "<h5>Where: " + eventCity + " At Venue: " + eventVenue + "</h5> <button class='btn btn-primary glow-input-button'> <a href=" + link + ">Purchase tickets</a></button></div><br>");
-                                                  // Append the text to <button>
-                    //$("#result").prepend(btn);//
-                   
-                  // $('#result').append("<input type='submit' value='Choose Event'>");
-                   //var button = document.createElement("button")
-                  // var b = document.createTextNode("Choose Event");
-                 //  button.appendChild(b);
-                 //  $('#result').appendChild(button);
-                }
+                var btn = document.createElement("BUTTON"); // Create a <button> element
+                var t = document.createTextNode("Choose Event"); // Create a text node
+                btn.appendChild(t);
+                $(btn).addClass("showEvent");
+                $("#event").append("<div class='flip'><div class='front pic' style='background-image: url(" + eventImage + ")''><h1 class='text-shadow'>" + eventName + "</h1></div><div class='back'><h2>" + eventCity + "</h2><p>" + eventDate + "</p><p>" + eventVenue + "<br><a href='" + link + "' target='_blank'><button class='btn btn-primary glov-input-button'>Purchase</button></a></div></div>");
+            }
             initMap();
             // Log the queryURL
             console.log(queryURL);
@@ -135,4 +113,5 @@ $("#search").on("click", function (event) {
             console.log(response);
 
         });
+
 });
