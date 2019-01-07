@@ -352,3 +352,10 @@ h3 {
   clear: both;
   display: table;
 }
+
+#resultImage{
+  height: 100px;
+    width: 100px;
+    float: left;
+    margin-top: -52px;
+}
