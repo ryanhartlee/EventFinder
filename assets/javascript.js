@@ -99,6 +99,7 @@ $("#search").on("click", function (event) {
                     lng: +longitude
                 });
                 console.log(locations);
+
                 var btn = document.createElement("BUTTON"); // Create a <button> element
                 var t = document.createTextNode("Choose Event"); // Create a text node
                 btn.appendChild(t);
@@ -112,6 +113,7 @@ $("#search").on("click", function (event) {
                 // Log the resulting object
                 console.log(response);
             };
+
 
         });
 
